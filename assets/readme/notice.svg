@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">说明：只讲文风与格式，不含业务数据，示例均为演示值</title>
+  <desc id="desc">浅色提示条，左侧标注“说明”，右侧三项：只讲文风、结构、格式；不含业务数据、内容指导；示例均为演示值。</desc>
+
+  <rect x="0" y="0" width="1200" height="100" rx="10" fill="#F7F3E8" stroke="#E2D8C4"/>
+  <rect x="22" y="22" width="4" height="56" rx="2" fill="#A53B2E"/>
+
+  <text x="42" y="45" fill="#1C3A2E" font-size="18" font-weight="700"
+        font-family="'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', serif">说明</text>
+  <text x="42" y="66" fill="#8B7E65" font-size="10" letter-spacing="2.2"
+        font-family="Inter, 'Helvetica Neue', Arial, sans-serif">NOTE</text>
+
+  <line x1="132" y1="24" x2="132" y2="76" stroke="#D9CFBA"/>
+
+  <g fill="none" stroke="#7A8F80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M164 62l9-9 8 8-9 9z"/>
+    <path d="M173 53l5-5 8 8-5 5"/>
+    <path d="M162 66l2 2"/>
+  </g>
+  <text x="196" y="55" fill="#1C3A2E" font-size="17" letter-spacing="0.6"
+        font-family="'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', serif">只讲文风 · 结构 · 格式</text>
+
+  <line x1="500" y1="24" x2="500" y2="76" stroke="#D9CFBA"/>
+
+  <g fill="none" stroke="#7A8F80" stroke-width="1.6" stroke-linecap="round">
+    <ellipse cx="540" cy="42" rx="11" ry="4"/>
+    <path d="M529 42v14c0 2.2 4.9 4 11 4s11-1.8 11-4V42"/>
+    <path d="M529 49c0 2.2 4.9 4 11 4s11-1.8 11-4"/>
+    <path d="M532 36l16 26" stroke="#A53B2E"/>
+  </g>
+  <text x="566" y="55" fill="#1C3A2E" font-size="17" letter-spacing="0.6"
+        font-family="'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', serif">不含业务数据 · 内容指导</text>
+
+  <line x1="872" y1="24" x2="872" y2="76" stroke="#D9CFBA"/>
+
+  <g fill="none" stroke="#7A8F80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="900" y="36" width="20" height="26" rx="2"/>
+    <path d="M905 49l4 4 7-8"/>
+  </g>
+  <text x="936" y="55" fill="#1C3A2E" font-size="17" letter-spacing="0.6"
+        font-family="'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', serif">示例均为演示值</text>
+</svg>

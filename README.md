@@ -2,13 +2,21 @@
 
 **国网公文材料写作助手**
 
+![version](https://img.shields.io/badge/version-0.9.3-blue)
+![format](https://img.shields.io/badge/output-docx-2b579a)
+![scope](https://img.shields.io/badge/scope-Word%20only-555)
+
 ![SGCC Writer 封面：公文纸张与结构化写作流程](assets/readme/hero.svg)
 
 把"写方案、写汇报、写总结、起草规范、写调研报告"从临时拼凑，变成一套可复用的**判型 → 补料 → 成稿 → 自检**流程。
 
-![version](https://img.shields.io/badge/version-0.9.3-blue)
-![format](https://img.shields.io/badge/output-docx-2b579a)
-![scope](https://img.shields.io/badge/scope-Word%20only-555)
+## 说明
+
+![说明：只讲文风与格式，不含业务数据，示例均为演示值](assets/readme/notice.svg)
+
+本技能只提供文风、结构、格式、句式与自检规则的指导辅助，不包含任何业务数据、内容指导或事实性材料。
+
+仓库中的数字、单位名称、文号、人名、引文等内容均为演示值或虚构值，不来自任何真实文档，不涉及任何真实业务数据、真实单位、真实人员或真实项目，不作为事实依据。
 
 ---
 
@@ -75,7 +83,7 @@ SGCC Writer 把这些问题拆成可执行的规则：**先判型，再补料，
 
 ### 7. 语感示例隔离
 
-历史材料的语感样例放在 `sgcc-writer/examples/语感示例.md`，**默认不读**。只有需要校准句式、节奏、口吻时才读取，且其中任何业务内容都不得复用。
+演示用的语感样例放在 `sgcc-writer/examples/语感示例.md`，**默认不读**。只有需要校准句式、节奏、口吻时才读取；样例中的单位、数字、提法、人名、引文等均为演示值，不得复用。
 
 ### 8. 交付规范
 
@@ -99,12 +107,6 @@ SGCC Writer 把这些问题拆成可执行的规则：**先判型，再补料，
 不要复制 README.md、CHANGELOG.md 和 .github 目录。
 安装后确认 SKILL.md 存在，并告诉我安装路径。
 ```
-
----
-
-## 声明
-
-本仓库中的示例、演示内容、数字、单位名称、文号、人名、引文等均为体例演示，已做脱敏或虚构处理，不来自任何真实文档，不涉及真实业务数据、真实单位、真实人员或真实项目，不作为事实依据。使用本技能生成的材料，一切事实须由用户提供并核实。
 
 ---
 
