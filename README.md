@@ -4,7 +4,7 @@
 
 把"写方案、写汇报、写总结、起草规范、写调研报告"从临时拼凑，变成一套可复用的**判型 → 补料 → 成稿 → 自检**流程。
 
-![version](https://img.shields.io/badge/version-0.9.1-blue)
+![version](https://img.shields.io/badge/version-0.9.2-blue)
 ![format](https://img.shields.io/badge/output-docx-2b579a)
 ![scope](https://img.shields.io/badge/scope-Word%20only-555)
 
@@ -127,7 +127,7 @@ xcopy sgcc-writer\sgcc-writer %USERPROFILE%\.qoder\skills\sgcc-writer\ /E /I
 Release 附件由 GitHub Actions 自动打包，**只包含 `sgcc-writer/` 技能目录**，不含 README、CHANGELOG 和仓库配置。
 
 ```text
-sgcc-writer-0.9.1.zip
+sgcc-writer-0.9.2.zip
 └── SKILL.md
     reference-*.md
     examples/
@@ -215,11 +215,26 @@ sgcc-writer/                ← 仓库根目录（GitHub 展示 README）
 - **仅 Word**：产出 `.docx`；PPT 不在范围。
 - **讲话稿不支持**：可改写成讲话提纲，但不承诺讲话稿体例。
 - **不自动核实外部事实**：如需最新政策、文号、数据，由用户提供或另行检索。
-- **0.9.1 未包含**：改稿模式（定点编辑与变更对照）、内容型自动触发、讲话稿模板。
+- **0.9.2 未包含**：改稿模式（定点编辑与变更对照）、内容型自动触发、讲话稿模板。
+
+---
+
+## 免责声明
+
+本仓库中的示例、演示内容、数字、单位名称、文号、人名、引文等均为体例演示，已做脱敏或虚构处理，不来自任何真实文档，不涉及真实业务数据、真实单位、真实人员或真实项目，不作为事实依据。使用本技能生成的材料，一切事实须由用户提供并核实。
 
 ---
 
 ## 更新记录
+
+### 0.9.2（2026-11-05）
+
+示例脱敏与免责声明。
+
+- `examples/语感示例.md` 全面脱敏：省级公司、厂商、产品、模型、部门名称改为泛称；具体数字改为模糊量级或 X/Y/Z 占位。
+- 规则文件中残留的真实数量（如省级公司数量、内部培训品牌）改为规则化表述。
+- `SKILL.md`、5 个参考文件、语感示例库统一增加免责声明。
+- README 增加免责声明章节。
 
 ### 0.9.1（2026-11-05）
 
@@ -246,4 +261,4 @@ sgcc-writer/                ← 仓库根目录（GitHub 展示 README）
 
 ---
 
-**状态**：0.9.1 早期版本，规则仍在迭代中。建议先用一份真实材料跑完整流程，再用于正式交付。
+**状态**：0.9.2 早期版本，规则仍在迭代中。建议先用一份真实材料跑完整流程，再用于正式交付。

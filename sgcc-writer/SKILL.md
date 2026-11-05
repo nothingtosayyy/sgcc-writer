@@ -1,6 +1,6 @@
 ---
-name: sgcc-writer
-name_en: SGCC Writer
+name: sgcc-material-writing
+name_en: SGCC Material Writing
 name_zh: 国网材料写作助手
 description: Draft official Word materials for State Grid (国网信通中心/大数据中心) following the unit's proven house style — work plans, written reports (including annual/special work summaries as a variant), standards, and research reports. Guides the user with targeted questions, then generates a formatted .docx matching the structure, rhetoric, and file-naming conventions of historical materials. Use when the user asks to write/draft/modify 方案、汇报、总结、报告、规范、标准、调研报告 etc. Word documents only; PPT and speech drafts are out of scope.
 description_en: Draft official Word materials for State Grid (国网信通中心/大数据中心) following the unit's proven house style — work plans, written reports (including annual/special work summaries as a variant), standards, and research reports. Guides the user with targeted questions, then generates a formatted .docx matching the structure, rhetoric, and file-naming conventions of historical materials. Use when the user asks to write/draft/modify 方案、汇报、总结、报告、规范、标准、调研报告 etc. Word documents only; PPT and speech drafts are out of scope.
@@ -16,6 +16,8 @@ user-invocable: true
 本技能基于该单位 2024–2026 年历史材料（方案、汇报、规范、报告）提炼的写作套路。目标：承担单位公文初稿工作——引导补料 → 按体例生成 → 直接交付成品文件。
 
 **范围**：仅 WORD 类文档（方案／书面汇报含总结变体／标准规范／调研报告）。PPT、讲话稿不在本技能范围：要 PPT 时说明另用 PPT 技能；要讲话稿时说明暂不支持，可用方案或汇报改写成讲话提纲，但不承诺讲话稿体例。
+
+> **免责声明**：本技能中的示例、演示、数字、单位名称、文号、人名、引文等均为体例演示，已脱敏或虚构处理，不来自真实文档，不涉及真实业务数据，不作为事实依据。正式材料中的事实须由用户提供并核实。
 
 ## 内容与规则分界（贯穿全流程）
 
