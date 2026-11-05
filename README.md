@@ -37,8 +37,6 @@ SGCC Writer 把这些问题拆成可执行的规则：**先判型，再补料，
 | 标准规范 | GB 企标体、公文通知体、接口规范体、操作手册体 | docx |
 | 调研报告 | 现状调研、专题研究、举措研究 | docx |
 
-**不在范围**：PPT、讲话稿。讲话稿可用方案或汇报改写成讲话提纲，但不承诺讲话稿体例。
-
 ---
 
 ## 有什么特点
@@ -95,10 +93,8 @@ SGCC Writer 把这些问题拆成可执行的规则：**先判型，再补料，
 ```
 帮我安装 SGCC Writer 技能：
 仓库：https://github.com/nothingtosayyy/sgcc-writer
-只复制仓库中的 sgcc-writer/ 子目录到 ~/.qoder/skills/sgcc-writer/
-（Windows 为 %USERPROFILE%\.qoder\skills\sgcc-writer\）
+只复制仓库中的 sgcc-writer/ 子目录
 不要复制 README.md、CHANGELOG.md 和 .github 目录。
-如果已有 Release 包 sgcc-writer-0.9.3.zip，也可以下载后解压到同一目录。
 安装后确认 SKILL.md 存在，并告诉我安装路径。
 ```
 
@@ -118,13 +114,6 @@ SGCC Writer 把这些问题拆成可执行的规则：**先判型，再补料，
 
 - 参考文件头部的"依据 N 份真实材料"改为"依据写作惯例整理"。
 - 与免责声明保持一致，不再暗示示例来自具体真实文档。
-
-### 0.9.2（2026-11-05）
-
-示例脱敏与免责声明。
-
-- `examples/语感示例.md` 全面脱敏：单位、厂商、产品、模型、部门改为泛称，数字改为模糊量级或 X/Y/Z 占位。
-- `SKILL.md`、5 个参考文件、示例库、README 增加免责声明。
 
 ### 0.9.1（2026-11-05）
 
