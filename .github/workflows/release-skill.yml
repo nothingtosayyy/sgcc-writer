@@ -1,0 +1,35 @@
+name: Release skill package
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build skill-only zip
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          if [ -z "$VERSION" ] || [ "$VERSION" = "main" ]; then
+            VERSION="manual-${GITHUB_SHA::7}"
+          fi
+          cd sgcc-writer
+          zip -r "../sgcc-writer-${VERSION}.zip" .
+          cd ..
+          ls -lh "sgcc-writer-${VERSION}.zip"
+
+      - name: Publish release asset
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: sgcc-writer-*.zip
+          generate_release_notes: true

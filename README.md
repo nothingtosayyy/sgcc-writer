@@ -122,9 +122,19 @@ xcopy sgcc-writer\sgcc-writer %USERPROFILE%\.qoder\skills\sgcc-writer\ /E /I
 
 > 如果你的旧目录名是 `sgcc-material-writing`，请在关闭 Qoder 后将目录重命名为 `sgcc-writer`，再重新打开。
 
-### 方式二：下载 Release（如提供）
+### 方式二：下载 Release 包（推荐给最终用户）
 
-只取 `sgcc-writer/` 子目录，不要连同仓库根目录的 README、CHANGELOG 一起放入 skills 目录。
+Release 附件由 GitHub Actions 自动打包，**只包含 `sgcc-writer/` 技能目录**，不含 README、CHANGELOG 和仓库配置。
+
+```text
+sgcc-writer-0.9.1.zip
+└── SKILL.md
+    reference-*.md
+    examples/
+    .skill-metadata.yaml
+```
+
+若尚未发布 Release，请使用方式一，并只复制 `sgcc-writer/` 子目录。
 
 ### 为什么 README 不在技能目录里
 
@@ -134,16 +144,18 @@ xcopy sgcc-writer\sgcc-writer %USERPROFILE%\.qoder\skills\sgcc-writer\ /E /I
 sgcc-writer/                ← 仓库根目录（GitHub 展示 README）
 ├── README.md               ← 不会被技能加载
 ├── CHANGELOG.md            ← 不会被技能加载
+├── .github/workflows/      ← 只打包技能目录的 Release 流水线
 └── sgcc-writer/            ← 真正的技能包（安装这个）
     ├── SKILL.md
     └── ...
 ```
 
-这样处理有三个好处：
+这样处理有四个好处：
 
 1. 安装时只复制内层 `sgcc-writer/`，README 和 CHANGELOG 不会进入技能包；
 2. Qoder 加载技能时只读 `SKILL.md` 及其引用的参考文件，不会反复读 README；
-3. 仓库首页仍然有完整的 README 可供浏览。
+3. Release 附件由流水线只打包 `sgcc-writer/`，用户下载的 zip 里没有 README；
+4. 仓库首页仍然有完整的 README 可供浏览。
 
 ---
 
