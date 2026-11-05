@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" role="img" aria-labelledby="title desc">
+  <title id="title">SGCC Writer 国网公文材料写作助手</title>
+  <desc id="desc">深绿色公文纸张与结构网格构成的主视觉，标题为 SGCC WRITER，副标题为国网公文材料写作助手，流程为判型、补料、成稿、自检。</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10291F"/>
+      <stop offset="0.55" stop-color="#0A1B15"/>
+      <stop offset="1" stop-color="#06100C"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.32" r="0.7">
+      <stop offset="0" stop-color="#2E5A45" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#2E5A45" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="420" fill="url(#bg)"/>
+  <rect width="1200" height="420" fill="url(#glow)"/>
+  <rect width="1200" height="420" fill="url(#grid)"/>
+
+  <circle cx="952" cy="206" r="268" fill="none" stroke="#C7A35A" stroke-opacity="0.12"/>
+  <circle cx="952" cy="206" r="222" fill="none" stroke="#C7A35A" stroke-opacity="0.07"/>
+
+  <g font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+    <text x="72" y="86" fill="#C7A35A" font-size="13" letter-spacing="3.2">MATERIAL WRITING · 0.9.3</text>
+    <text x="68" y="178" fill="#F6F2E7" font-size="70" font-weight="300" letter-spacing="9">SGCC</text>
+    <text x="68" y="250" fill="#F6F2E7" font-size="70" font-weight="700" letter-spacing="9">WRITER</text>
+  </g>
+
+  <text x="72" y="302" fill="#D8D2C3" font-size="25" letter-spacing="7"
+        font-family="'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', serif">国网公文材料写作助手</text>
+
+  <line x1="72" y1="328" x2="168" y2="328" stroke="#C7A35A" stroke-width="2"/>
+  <text x="72" y="362" fill="#8FA99B" font-size="17" letter-spacing="2.4"
+        font-family="Inter, 'Helvetica Neue', Arial, sans-serif">判型 / 补料 / 成稿 / 自检</text>
+  <text x="72" y="394" fill="#6E8579" font-size="11" letter-spacing="2"
+        font-family="Inter, 'Helvetica Neue', Arial, sans-serif">WORD ONLY · DOCX · 0.9.3</text>
+
+  <g filter="url(#shadow)">
+    <g transform="rotate(-7 925 208)">
+      <rect x="792" y="52" width="262" height="312" rx="9" fill="#EFE8D8" fill-opacity="0.10"
+            stroke="#C7A35A" stroke-opacity="0.22"/>
+    </g>
+    <g transform="rotate(4 925 208)">
+      <rect x="806" y="58" width="262" height="312" rx="9" fill="#EFE8D8" fill-opacity="0.16"
+            stroke="#C7A35A" stroke-opacity="0.26"/>
+    </g>
+    <g>
+      <rect x="824" y="68" width="262" height="304" rx="9" fill="#FAF6EC" stroke="#D9CFBA"/>
+
+      <rect x="856" y="100" width="92" height="6" rx="3" fill="#A53B2E"/>
+      <rect x="856" y="122" width="172" height="11" rx="2" fill="#1C3A2E"/>
+      <rect x="856" y="143" width="128" height="8" rx="2" fill="#6C7F73"/>
+      <rect x="856" y="161" width="152" height="8" rx="2" fill="#B7AD99"/>
+
+      <rect x="856" y="194" width="184" height="6" rx="3" fill="#D8CFBD"/>
+      <rect x="856" y="212" width="158" height="6" rx="3" fill="#D8CFBD"/>
+      <rect x="856" y="230" width="176" height="6" rx="3" fill="#D8CFBD"/>
+      <rect x="856" y="248" width="136" height="6" rx="3" fill="#D8CFBD"/>
+      <rect x="856" y="266" width="168" height="6" rx="3" fill="#D8CFBD"/>
+      <rect x="856" y="284" width="118" height="6" rx="3" fill="#D8CFBD"/>
+
+      <g fill="#1C3A2E" fill-opacity="0.10">
+        <rect x="856" y="312" width="20" height="20" rx="2"/>
+        <rect x="882" y="312" width="20" height="20" rx="2"/>
+        <rect x="908" y="312" width="20" height="20" rx="2"/>
+        <rect x="856" y="338" width="20" height="20" rx="2"/>
+        <rect x="882" y="338" width="20" height="20" rx="2"/>
+        <rect x="908" y="338" width="20" height="20" rx="2"/>
+      </g>
+
+      <circle cx="1036" cy="326" r="27" fill="none" stroke="#A53B2E" stroke-opacity="0.72" stroke-width="1.6"/>
+      <circle cx="1036" cy="326" r="21" fill="none" stroke="#A53B2E" stroke-opacity="0.36"/>
+      <text x="1036" y="333" text-anchor="middle" fill="#A53B2E" font-size="20"
+            font-family="'Songti SC', 'Noto Serif SC', serif">文</text>
+
+      <path d="M842 86h18M842 86v18" fill="none" stroke="#C7A35A" stroke-opacity="0.7" stroke-width="1.4"/>
+      <path d="M1068 86h-18M1068 86v18" fill="none" stroke="#C7A35A" stroke-opacity="0.7" stroke-width="1.4"/>
+      <path d="M842 354h18M842 354v-18" fill="none" stroke="#C7A35A" stroke-opacity="0.7" stroke-width="1.4"/>
+      <path d="M1068 354h-18M1068 354v-18" fill="none" stroke="#C7A35A" stroke-opacity="0.7" stroke-width="1.4"/>
+    </g>
+  </g>
+</svg>

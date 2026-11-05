@@ -2,6 +2,8 @@
 
 **国网公文材料写作助手**
 
+![SGCC Writer 封面：公文纸张与结构化写作流程](assets/readme/hero.svg)
+
 把"写方案、写汇报、写总结、起草规范、写调研报告"从临时拼凑，变成一套可复用的**判型 → 补料 → 成稿 → 自检**流程。
 
 ![version](https://img.shields.io/badge/version-0.9.3-blue)
