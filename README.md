@@ -4,7 +4,7 @@
 
 把"写方案、写汇报、写总结、起草规范、写调研报告"从临时拼凑，变成一套可复用的**判型 → 补料 → 成稿 → 自检**流程。
 
-![version](https://img.shields.io/badge/version-0.9.2-blue)
+![version](https://img.shields.io/badge/version-0.9.3-blue)
 ![format](https://img.shields.io/badge/output-docx-2b579a)
 ![scope](https://img.shields.io/badge/scope-Word%20only-555)
 
@@ -127,7 +127,7 @@ xcopy sgcc-writer\sgcc-writer %USERPROFILE%\.qoder\skills\sgcc-writer\ /E /I
 Release 附件由 GitHub Actions 自动打包，**只包含 `sgcc-writer/` 技能目录**，不含 README、CHANGELOG 和仓库配置。
 
 ```text
-sgcc-writer-0.9.2.zip
+sgcc-writer-0.9.3.zip
 └── SKILL.md
     reference-*.md
     examples/
@@ -215,7 +215,7 @@ sgcc-writer/                ← 仓库根目录（GitHub 展示 README）
 - **仅 Word**：产出 `.docx`；PPT 不在范围。
 - **讲话稿不支持**：可改写成讲话提纲，但不承诺讲话稿体例。
 - **不自动核实外部事实**：如需最新政策、文号、数据，由用户提供或另行检索。
-- **0.9.2 未包含**：改稿模式（定点编辑与变更对照）、内容型自动触发、讲话稿模板。
+- **0.9.3 未包含**：改稿模式（定点编辑与变更对照）、内容型自动触发、讲话稿模板。
 
 ---
 
@@ -226,6 +226,13 @@ sgcc-writer/                ← 仓库根目录（GitHub 展示 README）
 ---
 
 ## 更新记录
+
+### 0.9.3（2026-11-05）
+
+来源表述去真实化。
+
+- 参考文件头部的"依据 N 份真实材料"改为"依据写作惯例整理"。
+- 与免责声明保持一致，不再暗示示例来自具体真实文档。
 
 ### 0.9.2（2026-11-05）
 
@@ -261,4 +268,4 @@ sgcc-writer/                ← 仓库根目录（GitHub 展示 README）
 
 ---
 
-**状态**：0.9.2 早期版本，规则仍在迭代中。建议先用一份真实材料跑完整流程，再用于正式交付。
+**状态**：0.9.3 早期版本，规则仍在迭代中。建议先用一份真实材料跑完整流程，再用于正式交付。
