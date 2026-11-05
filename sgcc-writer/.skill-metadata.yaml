@@ -1,0 +1,75 @@
+examples:
+  - id: write-work-plan
+    title:
+      zh: 写工作方案
+      en: Write a Work Plan
+    description:
+      zh: 生成工作方案初稿（docx），先引导补充依据、目标、任务分工等关键信息
+      en: Generate a work plan draft (docx) after guided questions on basis, goals, and task assignments
+    prompt:
+      zh: |-
+        帮我写一个{{方案主题，如"2027年人工智能样本运营"}}工作方案。
+        背景信息：{{可选：依据文件/领导要求、量化目标、任务板块、责任分工、时间节点}}
+      en: |-
+        Help me write a work plan for {{topic, e.g. "2027 AI sample operations"}}.
+        Context: {{optional: basis documents, quantified goals, task areas, owners, milestones}}
+
+  - id: written-report
+    title:
+      zh: 写书面汇报材料
+      en: Write a Written Report
+    description:
+      zh: 生成WORD书面汇报（docx），按"思路-典型做法-下一步"套路成文
+      en: Generate a written report (docx) following the "approach - practices - next steps" pattern
+    prompt:
+      zh: |-
+        帮我写一份关于{{主题}}的书面工作汇报，给{{对象}}看。
+        成效数据：{{可选：核心数字}}；下一步安排：{{可选}}
+      en: |-
+        Write a written work report on {{topic}} for {{audience}}.
+        Key metrics: {{optional}}; Next steps: {{optional}}
+
+  - id: write-summary
+    title:
+      zh: 写工作总结
+      en: Write a Work Summary
+    description:
+      zh: 生成年度或专项工作总结（docx），按书面汇报的总结变体成文，必含存在问题与下一年思路
+      en: Generate an annual or special work summary (docx) as a report variant, including issues and next-year plans
+    prompt:
+      zh: |-
+        帮我写一份{{年份}}{{主题}}工作总结，给{{对象}}看。
+        全年工作：{{可选：主要板块}}；成效数据：{{可选}}；存在问题：{{可选}}；下一年思路：{{可选}}
+      en: |-
+        Write a {{period}} work summary on {{topic}} for {{audience}}.
+        Work areas: {{optional}}; Metrics: {{optional}}; Issues: {{optional}}; Next-year plans: {{optional}}
+
+  - id: draft-standard
+    title:
+      zh: 起草标准规范
+      en: Draft a Standard
+    description:
+      zh: 起草企业标准/管理办法/接口规范/操作手册，自动判型套用对应体例
+      en: Draft an enterprise standard / management rule / API spec / operations manual with the matching style
+    prompt:
+      zh: |-
+        帮我起草{{名称}}，类型是{{GB企标/管理办法（公文印发）/接口规范/操作手册}}，
+        适用范围：{{范围}}，关键要求：{{可选}}
+      en: |-
+        Draft {{name}} as a {{GB-style standard / management rule / API spec / manual}},
+        applicable to {{scope}}. Key requirements: {{optional}}
+
+  - id: research-report
+    title:
+      zh: 写调研/研究报告
+      en: Write a Research Report
+    description:
+      zh: 生成现状调研、专题研究或举措研究报告（docx），含问题卡与分层建议
+      en: Generate a survey / topic / initiative research report (docx) with problem cards and layered advice
+    prompt:
+      zh: |-
+        帮我写一份{{主题}}调研报告（或研究报告），调研情况：{{可选：单位数/人数/发现的问题}}，
+        需要重点分析：{{可选}}
+      en: |-
+        Write a research report on {{topic}}. Survey details: {{optional}}.
+        Focus areas: {{optional}}
