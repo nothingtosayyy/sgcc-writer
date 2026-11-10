@@ -2,10 +2,10 @@
 name: sgcc-writer
 name_en: SGCC Writer
 name_zh: 国网材料写作助手
-description: Write and revise official Word materials for State Grid (国网信通中心/大数据中心) in the unit's house style — work plans, written reports (incl. annual/special summaries), standards, research reports. Use automatically for State Grid-related Word documents — content mentioning 国网/国家电网/省公司/信通中心 or written in SGCC official style — including requests to polish, smooth sentences, rewrite sections, apply review comments, or condense/expand an existing draft; no explicit skill name needed. Drafting follows guided questions; revision uses targeted edits with a change log. Word only; PPT and speech drafts are out of scope.
-description_en: Write and revise official Word materials for State Grid (国网信通中心/大数据中心) in the unit's house style — work plans, written reports (incl. annual/special summaries), standards, research reports. Use automatically for State Grid-related Word documents — content mentioning 国网/国家电网/省公司/信通中心 or written in SGCC official style — including requests to polish, smooth sentences, rewrite sections, apply review comments, or condense/expand an existing draft; no explicit skill name needed. Drafting follows guided questions; revision uses targeted edits with a change log. Word only; PPT and speech drafts are out of scope.
-description_zh: 国网（国家电网、国网信通中心、省公司）WORD 材料写作与改稿技能。覆盖工作方案、书面汇报（含年度/专项总结）、标准规范、调研报告。自动适用：文档内容涉及国网/国家电网/省公司/信通中心，或为本单位公文文风，即使用本技能，无需用户点名；包括润色、顺句、章节重写、按批注修改、压缩扩写等改稿请求。起草走引导补料；改稿走定点编辑并输出变更对照。仅 WORD，PPT 和讲话稿不在范围。
-when_to_use: 国网/国家电网/省公司/信通中心的 Word 材料（方案、汇报、总结、规范、调研报告），以及润色、顺句、章节重写、按批注修改、压缩扩写。不用于讲话稿、主持词、致辞、PPT、纯问答、代码或非文档任务。
+description: Write and revise official Word materials for State Grid (国网) in the unit's house style — work plans, written reports (incl. annual/special summaries), standards, research reports. Use automatically for State Grid-related Word documents — content mentioning 国网/国家电网/省公司 or written in SGCC official style — including requests to polish, smooth sentences, rewrite sections, apply review comments, or condense/expand an existing draft; no explicit skill name needed. Drafting follows guided questions; revision uses targeted edits with a change log. Word only; PPT and speech drafts are out of scope.
+description_en: Write and revise official Word materials for State Grid (国网) in the unit's house style — work plans, written reports (incl. annual/special summaries), standards, research reports. Use automatically for State Grid-related Word documents — content mentioning 国网/国家电网/省公司 or written in SGCC official style — including requests to polish, smooth sentences, rewrite sections, apply review comments, or condense/expand an existing draft; no explicit skill name needed. Drafting follows guided questions; revision uses targeted edits with a change log. Word only; PPT and speech drafts are out of scope.
+description_zh: 国网（国家电网、省公司）WORD 材料写作与改稿技能。覆盖工作方案、书面汇报（含年度/专项总结）、标准规范、调研报告。自动适用：文档内容涉及国网/国家电网/省公司，或为本单位公文文风，即使用本技能，无需用户点名；包括润色、顺句、章节重写、按批注修改、压缩扩写等改稿请求。起草走引导补料；改稿走定点编辑并输出变更对照。仅 WORD，PPT 和讲话稿不在范围。
+when_to_use: 国网/国家电网/省公司的 Word 材料（方案、汇报、总结、规范、调研报告），以及润色、顺句、章节重写、按批注修改、压缩扩写。不用于讲话稿、主持词、致辞、PPT、纯问答、代码或非文档任务。
 argument-hint: Describe the Word document to write, e.g. "帮我写一个2027年样本运营工作方案" or "写一份智能体工作汇报"
 argument-hint-en: Describe the Word document to write, e.g. "帮我写一个2027年样本运营工作方案" or "写一份智能体工作汇报"
 argument-hint-zh: 描述要写的 Word 材料，如"帮我写一个2027年样本运营工作方案"或"写一份智能体工作汇报"
@@ -24,7 +24,7 @@ user-invocable: true
 
 出现以下任一情形即视为国网材料，直接使用本技能：
 
-- 文档标题、正文或页眉页脚出现“国网、国家电网、省电力公司、国网信通中心、大数据中心、供电公司”等单位名称；
+- 文档标题、正文或页眉页脚出现“国网、国家电网、省电力公司、供电公司”等单位名称；
 - 文体为国网常见公文（工作方案、书面汇报、总结、标准规范、调研/研究报告），且使用“一、（一）1.（1）”编号链和本单位称谓口径；
 - 用户对上述材料提出润色、顺句、重写章节、按批注修改、压缩扩写、统一口径等改稿要求。
 
@@ -170,7 +170,7 @@ A 级逐项核对，任一项不过即返工。**起草走 A+B1+C；改稿走 A+
 
 - **A1 数字一致**：同一指标全文一个值/口径/单位；分项之和＝合计、占比×基数＝分项、增长率可复算；附件表与正文同源；每个数字能在《内容来源清单》找到出处，找不到已改【 】；未搬用参考文件或 examples 的示例数字。
 - **A2 时间一致**：年份/节点与用户时间坐标一致，无示例年份残留；里程碑先后不矛盾；文件名日期、正文日期、封面年月三者一致。
-- **A3 主体与称谓一致**：首次"国家电网有限公司（以下简称'公司'）"后统一"公司"；"国网信通中心（大数据中心）"括号连写；部门、单位、职务与用户提供一致，未被误改。
+- **A3 主体与称谓一致**：首次"国家电网有限公司（以下简称'公司'）"后统一"公司"；单位名称、部门、职务按用户提供写法，未被误改。
 - **A4 引文可溯源**：领导讲话、政策文件、外部报告：原文＋出处＋日期齐全；不把转述写成引号直引。
 - **A5 无虚构、无残留**：无编造数据/文号/人名/日期；无 TODO/待补充/待确认/审稿批注；未出现参考文件或 examples 的具体专名、提法、文号、引文；【 】已列清单，〔 〕已替换完毕。
 - **A6 对外口吻**（仅对外材料）：无"请领导审议/请支持/要求/务必/压实"等内部指令口吻；成绩留余地（初步建成/试点应用/约X%）。
