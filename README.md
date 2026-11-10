@@ -2,7 +2,7 @@
 
 **国网公文材料写作助手**
 
-![version](https://img.shields.io/badge/version-0.9.9-blue)
+![version](https://img.shields.io/badge/version-0.9.10-blue)
 ![format](https://img.shields.io/badge/output-docx-2b579a)
 ![scope](https://img.shields.io/badge/scope-Word%20only-555)
 
@@ -44,7 +44,7 @@ SGCC Writer 把这些问题拆成可执行的规则：**先判型，再补料，
 |---|---|---|
 | 工作方案 | 年度方案、建设专项、落实型、运营方案、思路举措、流程规范 | docx |
 | 书面汇报 | 标准回顾型、前瞻举措型、工作总结变体（年度/专项） | docx |
-| 标准规范 | GB 企标体、公文通知体、接口规范体、操作手册体 | docx |
+| 标准规范 | GB 企标体、接口规范体、操作手册体 | docx |
 | 调研报告 | 现状调研、专题研究、举措研究 | docx |
 
 ---

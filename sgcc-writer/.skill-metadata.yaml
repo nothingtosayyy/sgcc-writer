@@ -53,7 +53,7 @@ examples:
       en: Draft an enterprise standard / management rule / API spec / operations manual with the matching style
     prompt:
       zh: |-
-        帮我起草{{名称}}，类型是{{GB企标/管理办法（公文印发）/接口规范/操作手册}}，
+        帮我起草{{名称}}，类型是{{GB企标/接口规范/操作手册}}，
         适用范围：{{范围}}，关键要求：{{可选}}
       en: |-
         Draft {{name}} as a {{GB-style standard / management rule / API spec / manual}},
