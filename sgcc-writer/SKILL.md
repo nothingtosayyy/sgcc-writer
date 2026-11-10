@@ -1,10 +1,10 @@
 ---
-name: sgcc-material-writing
-name_en: SGCC Material Writing
+name: sgcc-writer
+name_en: SGCC Writer
 name_zh: 国网材料写作助手
-description: Draft official Word materials for State Grid (国网信通中心/大数据中心) following the unit's proven house style — work plans, written reports (including annual/special work summaries as a variant), standards, and research reports. Guides the user with targeted questions, then generates a formatted .docx matching the structure, rhetoric, and file-naming conventions of historical materials. Use when the user asks to write/draft/modify 方案、汇报、总结、报告、规范、标准、调研报告 etc. Word documents only; PPT and speech drafts are out of scope.
-description_en: Draft official Word materials for State Grid (国网信通中心/大数据中心) following the unit's proven house style — work plans, written reports (including annual/special work summaries as a variant), standards, and research reports. Guides the user with targeted questions, then generates a formatted .docx matching the structure, rhetoric, and file-naming conventions of historical materials. Use when the user asks to write/draft/modify 方案、汇报、总结、报告、规范、标准、调研报告 etc. Word documents only; PPT and speech drafts are out of scope.
-description_zh: 按国网信通中心（大数据中心）历史材料套路撰写公文材料。覆盖工作方案、书面汇报（含年度/专项工作总结变体）、标准规范、调研报告等 WORD 文体。先引导用户补充关键信息，再生成符合单位体例（结构、句式、修辞、命名）的 docx 初稿。仅处理 Word 文档，PPT 和讲话稿不在本技能范围。用户说"帮我写个方案/写份汇报/写份总结/起草个规范/写个研究报告"等时触发。
+description: Write and revise official Word materials for State Grid (国网信通中心/大数据中心) in the unit's house style — work plans, written reports (incl. annual/special summaries), standards, research reports. Use automatically for State Grid-related Word documents — content mentioning 国网/国家电网/省公司/信通中心 or written in SGCC official style — including requests to polish, smooth sentences, rewrite sections, apply review comments, or condense/expand an existing draft; no explicit skill name needed. Drafting follows guided questions; revision uses targeted edits with a change log. Word only; PPT and speech drafts are out of scope.
+description_en: Write and revise official Word materials for State Grid (国网信通中心/大数据中心) in the unit's house style — work plans, written reports (incl. annual/special summaries), standards, research reports. Use automatically for State Grid-related Word documents — content mentioning 国网/国家电网/省公司/信通中心 or written in SGCC official style — including requests to polish, smooth sentences, rewrite sections, apply review comments, or condense/expand an existing draft; no explicit skill name needed. Drafting follows guided questions; revision uses targeted edits with a change log. Word only; PPT and speech drafts are out of scope.
+description_zh: 国网（国家电网、国网信通中心、省公司）WORD 材料写作与改稿技能。覆盖工作方案、书面汇报（含年度/专项总结）、标准规范、调研报告。自动适用：文档内容涉及国网/国家电网/省公司/信通中心，或为本单位公文文风，即使用本技能，无需用户点名；包括润色、顺句、章节重写、按批注修改、压缩扩写等改稿请求。起草走引导补料；改稿走定点编辑并输出变更对照。仅 WORD，PPT 和讲话稿不在范围。
 argument-hint: Describe the Word document to write, e.g. "帮我写一个2027年样本运营工作方案" or "写一份智能体工作汇报"
 argument-hint-en: Describe the Word document to write, e.g. "帮我写一个2027年样本运营工作方案" or "写一份智能体工作汇报"
 argument-hint-zh: 描述要写的 Word 材料，如"帮我写一个2027年样本运营工作方案"或"写一份智能体工作汇报"
@@ -18,6 +18,38 @@ user-invocable: true
 **范围**：仅 WORD 类文档（方案／书面汇报含总结变体／标准规范／调研报告）。PPT、讲话稿不在本技能范围：要 PPT 时说明另用 PPT 技能；要讲话稿时说明暂不支持，可用方案或汇报改写成讲话提纲，但不承诺讲话稿体例。
 
 > **免责声明**：本技能中的示例、演示、数字、单位名称、文号、人名、引文等均为体例演示，已脱敏或虚构处理，不来自真实文档，不涉及真实业务数据，不作为事实依据。正式材料中的事实须由用户提供并核实。
+
+## 适用判断（自动触发，无需用户点名）
+
+出现以下任一情形即视为国网材料，直接使用本技能：
+
+- 文档标题、正文或页眉页脚出现“国网、国家电网、省电力公司、国网信通中心、大数据中心、供电公司”等单位名称；
+- 文体为国网常见公文（工作方案、书面汇报、总结、标准规范、调研/研究报告），且使用“一、（一）1.（1）”编号链和本单位称谓口径；
+- 用户对上述材料提出润色、顺句、重写章节、按批注修改、压缩扩写、统一口径等改稿要求。
+
+判断存疑时按“疑似国网材料”处理，进入本技能后在第一步向用户确认，不因文体名称不明确而放弃使用。
+
+## 改稿模式（现有材料修改）
+
+**进入条件**：用户提供国网现有 WORD 材料，提出润色、顺句、重写章节、按批注修改、压缩扩写、统一口径等要求。改稿不执行“总工作流”的引导补料，直接进入定点编辑。
+
+**做法**：
+
+1. **先定范围**：只改用户点名或批注点到的段落、章节；未点名的内容不动，不顺手重写全文。
+2. **先读批注与修订**：逐条列出“编号—意见—落点”，确认本次范围；范围外的批注原样保留，不删除、不代答。
+3. **沿用原体例**：字体字号、编号链、图表题注、行距缩进、批注锚点、修订痕迹一律沿用原稿；不整体重排、不套新模板。
+4. **定点编辑**：另存新版本文件后按段落定位修改；涉及口径、数字、专名的改动，先核对来源再落笔。
+5. **变更对照**：交付时附“原→新”对照（位置、原文、改后、依据），只列改动项，未改项不列。
+6. **改稿自检**：数字与专名未被误改；图表编号连续；批注条数与锚点未丢；导出 PDF 目检分页与表格跨页。
+
+**边界**：从零起草仍走五步工作流；改稿只补必要事实，不做通用六问。
+
+**改稿红线**（细则见 [reference-revision.md](reference-revision.md)）：
+
+- 以用户最新附件为基线，不沿用上一轮底稿；
+- 含 `w:ins` 的段落不整段重写，按 ins-aware 文本定位后再改；
+- 替换或删除段落后重挂批注锚点，交付前核对批注条数；
+- 文件被占用时另存新版本，不覆盖、不删锁文件。
 
 ## 内容与规则分界（贯穿全流程）
 
@@ -37,6 +69,8 @@ user-invocable: true
 - **禁止**：把参考文件或 examples 中的专名、提法、数字、文号、引文直接写入新材料。
 
 ## 总工作流（五步，不得跳步）
+
+> 改稿任务（润色、顺句、重写章节、按批注修改、压缩扩写等）不走本流程，直接按上文“改稿模式”执行。
 
 ```
 第一步 判型 → 第二步 引导补料 → 第三步 按模板生成 → 第四步 成稿交付 → 第五步 交稿自检

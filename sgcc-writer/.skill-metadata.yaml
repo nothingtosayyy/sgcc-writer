@@ -73,3 +73,18 @@ examples:
       en: |-
         Write a research report on {{topic}}. Survey details: {{optional}}.
         Focus areas: {{optional}}
+
+  - id: revise-existing
+    title:
+      zh: 按批注修改现有材料
+      en: Revise an Existing Document
+    description:
+      zh: 对国网现有 WORD 材料按批注或意见做定点修改，保留原体例、批注与修订痕迹，输出变更对照
+      en: Make targeted edits to an existing SGCC Word document per review comments, preserving its style, comments and tracked changes, with a change log
+    prompt:
+      zh: |-
+        按这份审查意见修改《{{材料名称}}》的{{章节/范围}}，文件在：{{路径}}。
+        要求：只改批注点到的内容，保留原有批注和格式，改完给我原→新对照。
+      en: |-
+        Revise {{section/scope}} of "{{document}}" per the attached review comments at {{path}}.
+        Requirements: change only what the comments point to, keep existing comments and formatting, and provide a before/after change log.
