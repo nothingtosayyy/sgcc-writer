@@ -2,7 +2,7 @@
 
 **国网公文材料写作助手**
 
-![version](https://img.shields.io/badge/version-0.9.7-blue)
+![version](https://img.shields.io/badge/version-0.9.8-blue)
 ![format](https://img.shields.io/badge/output-docx-2b579a)
 ![scope](https://img.shields.io/badge/scope-Word%20only-555)
 
