@@ -1,14 +1,14 @@
 ---
 name: sgcc-writer
 name_en: SGCC Writer
-name_zh: 国网材料写作助手
-description: Write and revise official Word materials for State Grid (国网) in the unit's house style — work plans, written reports (incl. annual/special summaries), standards, research reports. Use automatically for State Grid-related Word documents — content mentioning 国网/国家电网/省公司 or written in SGCC official style — including requests to polish, smooth sentences, rewrite sections, apply review comments, or condense/expand an existing draft; no explicit skill name needed. Drafting follows guided questions; revision uses targeted edits with a change log. Word only; PPT and speech drafts are out of scope.
-description_en: Write and revise official Word materials for State Grid (国网) in the unit's house style — work plans, written reports (incl. annual/special summaries), standards, research reports. Use automatically for State Grid-related Word documents — content mentioning 国网/国家电网/省公司 or written in SGCC official style — including requests to polish, smooth sentences, rewrite sections, apply review comments, or condense/expand an existing draft; no explicit skill name needed. Drafting follows guided questions; revision uses targeted edits with a change log. Word only; PPT and speech drafts are out of scope.
-description_zh: 国网（国家电网、省公司）WORD 材料写作与改稿技能。覆盖工作方案、书面汇报（含年度/专项总结）、标准规范、调研报告。自动适用：文档内容涉及国网/国家电网/省公司，或为本单位公文文风，即使用本技能，无需用户点名；包括润色、顺句、章节重写、按批注修改、压缩扩写等改稿请求。起草走引导补料；改稿走定点编辑并输出变更对照。仅 WORD，PPT 和讲话稿不在范围。
-when_to_use: 国网/国家电网/省公司的 Word 材料（方案、汇报、总结、规范、调研报告），以及润色、顺句、章节重写、按批注修改、压缩扩写。不用于讲话稿、主持词、致辞、PPT、纯问答、代码或非文档任务。
-argument-hint: Describe the Word document to write, e.g. "帮我写一个2027年样本运营工作方案" or "写一份智能体工作汇报"
-argument-hint-en: Describe the Word document to write, e.g. "帮我写一个2027年样本运营工作方案" or "写一份智能体工作汇报"
-argument-hint-zh: 描述要写的 Word 材料，如"帮我写一个2027年样本运营工作方案"或"写一份智能体工作汇报"
+name_zh: 国网文档助手
+description: Write and revise official Word materials for State Grid (国网) in the unit's house style — work plans, written reports (incl. annual/special summaries), standards, research reports. Use automatically for State Grid-related Word documents — content mentioning 国网/国家电网/省公司 or written in SGCC official style — including requests to polish, smooth sentences, rewrite sections, apply review comments, or condense/expand an existing draft; no explicit skill name needed. Also applies SGCC house formatting/restyling to Word documents on request (排版、统一格式、套模板、格式规范化); formatting is available for any Word document and does not change content. Drafting follows guided questions; revision uses targeted edits with a change log. Word only; PPT and speech drafts are out of scope.
+description_en: Write and revise official Word materials for State Grid (国网) in the unit's house style — work plans, written reports (incl. annual/special summaries), standards, research reports. Use automatically for State Grid-related Word documents — content mentioning 国网/国家电网/省公司 or written in SGCC official style — including requests to polish, smooth sentences, rewrite sections, apply review comments, or condense/expand an existing draft; no explicit skill name needed. Also applies SGCC house formatting/restyling to Word documents on request (排版、统一格式、套模板、格式规范化); formatting is available for any Word document and does not change content. Drafting follows guided questions; revision uses targeted edits with a change log. Word only; PPT and speech drafts are out of scope.
+description_zh: 国网（国家电网、省公司）WORD 材料写作与改稿技能。覆盖工作方案、书面汇报（含年度/专项总结）、标准规范、调研报告。自动适用：文档内容涉及国网/国家电网/省公司，或为本单位公文文风，即使用本技能，无需用户点名；包括润色、顺句、章节重写、按批注修改、压缩扩写等改稿请求。另支持任意 WORD 文档按国网预设排版、统一格式、套模板（明确要求时），排版不改内容。起草走引导补料；改稿走定点编辑并输出变更对照。仅 WORD，PPT 和讲话稿不在范围。
+when_to_use: 国网/国家电网/省公司的 Word 材料（方案、汇报、总结、规范、调研报告），以及润色、顺句、章节重写、按批注修改、压缩扩写；任意 Word 文档按国网预设排版、统一格式、套模板（明确要求时）。不用于讲话稿、主持词、致辞、PPT、纯问答、代码或非文档任务。
+argument-hint: Describe the Word document to write or format, e.g. "帮我写一个2027年样本运营工作方案", "写一份智能体工作汇报", or "把这份汇报按国网格式排一下"
+argument-hint-en: Describe the Word document to write or format, e.g. "帮我写一个2027年样本运营工作方案", "写一份智能体工作汇报", or "把这份汇报按国网格式排一下"
+argument-hint-zh: 描述要写的或要排版的 Word 材料，如"帮我写一个2027年样本运营工作方案""写一份智能体工作汇报"或"把这份汇报按国网格式排一下"
 user-invocable: true
 ---
 
@@ -16,19 +16,20 @@ user-invocable: true
 
 本技能基于单位公文写作惯例（方案、汇报、规范、报告）整理的写作套路，示例均为演示值或虚构值。目标：承担单位公文初稿工作——引导补料 → 按体例生成 → 直接交付成品文件。
 
-**范围**：仅 WORD 类文档（方案／书面汇报含总结变体／标准规范／调研报告）。PPT、讲话稿不在本技能范围：要 PPT 时说明另用 PPT 技能；要讲话稿时说明暂不支持，可用方案或汇报改写成讲话提纲，但不承诺讲话稿体例。
+**范围**：WORD 类文档的内容写作（方案／书面汇报含总结变体／标准规范／调研报告）与排版（任意 WORD 文档按国网预设排版，明确要求时；`.docx` 原生，`.doc` 转换后）。PPT、讲话稿不在本技能范围：要 PPT 时说明另用 PPT 技能；要讲话稿时说明暂不支持，可用方案或汇报改写成讲话提纲，但不承诺讲话稿体例。
 
 > **免责声明**：本技能中的示例、演示、数字、单位名称、文号、人名、引文等均为体例演示，内容为演示值或虚构值，不来自真实文档，不涉及真实业务数据，不作为事实依据。正式材料中的事实须由用户提供并核实。
 
-## 适用判断（自动触发，无需用户点名）
+## 适用判断（自动触发 + 排版请求）
 
-出现以下任一情形即视为国网材料，直接使用本技能：
+出现以下任一情形即使用本技能：
 
 - 文档标题、正文或页眉页脚出现“国网、国家电网、省电力公司、供电公司”等单位名称；
 - 文体为国网常见公文（工作方案、书面汇报、总结、标准规范、调研/研究报告），且使用“一、（一）1.（1）”编号链和本单位称谓口径；
-- 用户对上述材料提出润色、顺句、重写章节、按批注修改、压缩扩写、统一口径等改稿要求。
+- 用户对上述材料提出润色、顺句、重写章节、按批注修改、压缩扩写、统一口径等改稿要求；
+- 用户对任意 WORD 文档提出按国网预设排版、统一格式、套模板、格式规范化要求。
 
-判断存疑时按“疑似国网材料”处理，进入本技能后在第一步向用户确认，不因文体名称不明确而放弃使用。
+判断存疑时按“疑似国网材料”处理，进入本技能后在第一步向用户确认，不因文体名称不明确而放弃使用。排版请求不要求国网特征；无法判断文档类型时，一律按国网预设处理（见 [reference-format.md](reference-format.md)）。
 
 ## 路径判定（先选路径，再执行）
 
@@ -37,8 +38,10 @@ user-invocable: true
 | 从 0 到 1 | 没有现成 WORD 底稿，用户说“写/起草/做一个” | 起草路径（五步工作流） |
 | 改这份 | 有现成 WORD 底稿，用户说“改/润色/顺句/按批注/压缩/扩写/统一口径” | 改稿路径 |
 | 参照重写 | 有现成底稿，但用户要“照这个写一份新的”（新文种、新年度、新结构） | 起草路径；原稿只作素材，不输出变更对照 |
+| 纯排版 | 有现成 WORD 底稿，用户说“排版/统一格式/套模板/格式整理”，不要求改内容 | 排版路径（见 [reference-format.md](reference-format.md)） |
+| 生成即排版 / 改稿后排版 | 起草完成，或改稿后要求排版 | 按“排版模式”确定依据；改稿后排版默认原稿体例 |
 
-判定只看两件事：**有没有现成底稿**、**用户要改它还是另写一份**，不看文件名。
+判定只看三件事：**有没有现成底稿**、**用户要改内容还是只排版**、**用户有没有指定目标格式**，不看文件名。
 中途用户补充新附件或改变要求时，以最新指令重新判路径。
 
 ## 改稿模式（现有材料修改）
@@ -65,6 +68,49 @@ user-invocable: true
 - 替换或删除段落后重挂批注锚点，交付前核对批注条数；
 - 文件被占用时另存新版本，不覆盖、不删锁文件。
 
+## 排版模式（只调格式，不改内容）
+
+**进入条件**：用户提供 WORD 文档（`.docx`，或可转换的 `.doc`），提出排版、统一格式、套模板、格式规范化等要求，且不要求改内容；或起草/参照重写完成后需要套排版。纯排版不走引导补料和 A/B 内容体例自检。
+
+### 先定“排版依据”（五选一）
+
+| 依据 | 何时用 | 说明 |
+|---|---|---|
+| 国网预设 | 纯排版且未指定目标；或用户明确说“按国网/按你们的格式” | 见 [reference-format.md](reference-format.md) §2；所有文档统一使用 |
+| 原稿体例 | 仅改稿后排版且未指定目标；用户说“按原稿方式排版” | 沿用原稿页面、字体字号、标题层级、图表题注；不一致处按主样式归一 |
+| 用户模板 | 用户提供模板 docx 或明确说“按XX模板” | 模板缺项用国网预设补齐并说明 |
+
+默认规则：
+
+- **纯排版、无目标**：一律**国网预设**（含非国网文档；回执注明“国网预设（非国网文档）”）。
+- **改稿后排版、无目标**：**原稿体例**，不套国网预设；回执写明，并提示可改用国网预设重排；原稿无稳定样式时按国网预设重排并告知。
+- **明确说“按XX模板”**：用户模板；缺项用国网预设补齐。
+
+### 只问格式问题（≤4 问）
+
+1. 目标格式/模板？（有则用；无则按默认）
+2. 页眉/落款？（默认不加）
+3. 目录/页码？（默认按依据）
+4. 输出路径/文件名？（默认同目录，加 `-排版-依据-YYYYMMDD`）
+
+用户说“你看着办”时直接按默认执行，不再追问。
+
+### 执行
+
+- 读 [reference-format.md](reference-format.md)，列出本次要应用的参数。
+- 输入 `.docx` 直接处理；`.doc`/`.docm` 先用 Word/WPS/LibreOffice 另存为 `.docx`，再排版；无法转换时请用户先另存。
+- 工具选择按能力类别，不绑定具体名称：本地可用的 Word 文档处理能力（含技能/MCP/Word/WPS 自动化，能读写 `.docx`、保留批注/修订）→ Python + `python-docx` 兜底 → 仅规范/模板。
+- 本地一个 Word 能力都没有时，用 Python + `python-docx` 执行一次性格式化；Python 也不可用时，只交付格式规范/模板并明确告知“未自动排版”，不得声称已完成。
+- 只调格式，不改内容；保留表格、图片、页眉页脚、脚注、批注、修订痕迹。
+- 工具无法保留的结构，停止并报告，不硬改。
+- 复杂文档按 B/C 级保障处理（见 reference-format.md §7）。
+
+### 交付
+
+- 文件命名：`原名-排版-〔依据〕-YYYYMMDD.docx`；原稿移入同目录 `历史版本/`；两个排版版本都保留时用依据区分。
+- 交付回复必须附“排版回执”（模板见 reference-format.md §5）：排版依据、执行方式、已应用项、未应用项、字体回退、校验结果。
+- 排版后用户要求改用 skill 预设时，另出一版 `原名-排版-国网预设-YYYYMMDD.docx`，不覆盖原稿体例版。
+
 ## 内容与规则分界（贯穿全流程）
 
 本技能只沉淀**可复用的规则**，不沉淀**一次性的内容**。
@@ -89,11 +135,12 @@ user-invocable: true
 3. **起草命名**：仍按 `【YYYY.MM.DD】主题+文种_Vn.n`。
 4. **默认修订模式**：改稿默认输出带修订痕迹的 docx（`w:ins` / `w:del`）；用户要干净稿时另出接受修订版，不覆盖修订版。
 5. **当场归档**：每次工作结束，把被替换的目标文档旧稿（含用户提供的基线稿）移入同目录 `历史版本/`，当前目录只保留最新稿；只归档本次目标文档的旧版本，不动同目录其它文件。
-6. 用户指定归档位置、命名规则或明确要求保留多份时，以用户为准。
+6. **排版命名**：纯排版按 `原名-排版-〔依据〕-YYYYMMDD.docx`；预设重排按 `原名-排版-国网预设-YYYYMMDD.docx`；原稿体例版与预设版都保留时，用依据区分，不互相覆盖。
+7. 用户指定归档位置、命名规则或明确要求保留多份时，以用户为准。
 
 ## 总工作流（五步，不得跳步）
 
-> 改稿任务（润色、顺句、重写章节、按批注修改、压缩扩写等）不走本流程，直接按上文“改稿模式”执行。
+> 改稿任务（润色、顺句、重写章节、按批注修改、压缩扩写等）不走本流程，直接按上文“改稿模式”执行。纯排版任务也不走本流程，直接按上文“排版模式”执行。
 
 ```
 第一步 判型 → 第二步 引导补料 → 第三步 按模板生成 → 第四步 成稿交付 → 第五步 交稿自检
@@ -120,6 +167,8 @@ user-invocable: true
 - 出现"全年工作／存在问题／下一年思路"→ 总结变体（reference-report.md §1.1）
 - 用户同时要 PPT 和 WORD（如"方案写完做个PPT"）→ 本技能只产出 WORD；PPT 部分告知用户另用 PPT 技能，章节骨架可复用本技能的 WORD 目录
 
+**排版任务不判文体**：用户明确要求排版/统一格式时，不查文体表，直接进入“排版模式”。
+
 **亚型无法从一句话判断时**（如只说"写个方案"），在第二步提问中一并确认，用 AskUserQuestion 给选项。
 
 ## 第二步：引导补料（本技能的灵魂）
@@ -131,9 +180,11 @@ user-invocable: true
 1. **主题与事由**：材料讲什么工作？（用户通常已给）
 2. **对象与场合**：给谁看/听？（本单位领导／上级公司部门／平级单位／行业会议／培训学员）→ 直接决定口吻
 3. **时间坐标**：什么时间用？（决定目标年份、时间节点写法）
-4. **篇幅**：给字数档位（2千/5千/万字），或按章节点位说明
+4. **篇幅**：给“字数（约几页）”档位——2千字约4页／5千字约9页／1万字约18页；也可按章节点位说明。
 5. **依据**：有没有上级文件文号、领导指示原话、会议要求？（方案与落实型材料的导语必需）
 6. **素材**：用户手头有哪些数据、做法、进展可写入？（成效数字让用户给，缺失就留【 】）
+
+> **篇幅与页数换算**：按本技能常规版式估算——A4，页边距上3.7／下3.5／左2.8／右2.6cm，正文三号仿宋、固定行距28磅；满页约600字，含多级标题按550字/页计，封面、目录、图表另计（正式材料有封面时通常再加1页）。常用档位：2千字≈4页，5千字≈9页，1万字≈18页。用户指定其它字体、字号或行距时，页数按实际版式重算。
 
 ### 分文体追问（在通用六问之后，详见各参考文件开头的"提问清单"节）
 
@@ -148,23 +199,23 @@ user-invocable: true
 
 参考文件只写规则与占位骨架，不承载可复用的具体内容。需要校准语感时再读 `examples/语感示例.md`，且不得复用其中任何内容（来源登记规则见第四步）。
 
-**长文检查点**：预计超过 5000 字或超过 5 章时，先出章节大纲（标题＋每章要点）给用户确认，再生成全文；用户明确要求直接出全文的除外。
+**长文检查点**：预计超过 5000 字（约 9 页）或超过 5 章时，先出章节大纲（标题＋每章要点）给用户确认，再生成全文；用户明确要求直接出全文的除外。
 
 ## 第四步：成稿交付
 
-- **生成**：仅 WORD 类（方案／书面汇报／规范／报告），直接生成 .docx 成品文件。生成前调用 `docx` 技能获取 Word 制作规范；中文字体、标题层级、"一、（一）1.（1）"编号按参考文件执行。
-- **技能分工**：结构、编号、句式、口吻以本技能为准；页面设置、字体字号、样式实现以 `docx` 技能为准。两者冲突时按此分工处理，不混用。
+- **生成**：仅 WORD 类（方案／书面汇报／规范／报告），直接生成 .docx 成品文件。正文统一按 [reference-format.md](reference-format.md) 的国网预设排版（A4、上3.7／下3.5／左2.8／右2.6cm、三号仿宋_GB2312、固定28磅、标题顶格、页码—N—）；标题层级、"一、（一）1.（1）"编号按参考文件执行。用户明确说“先不排版”时只出内容稿。
+- **技能分工**：结构、编号、句式、口吻、默认版式与排版验收以本技能为准；样式实现、分页兼容与其它版式调整以本地可用的 Word 文档处理能力为准（名称不限）。两者冲突时按此分工处理，不混用。
 - **内容来源清单**（生成时同步维护，不写入正文；默认在交付回复中给出，需留档时存 `产物/artifacts/`）：三列 `类别 | 内容 | 来源`。类别覆盖：数字、年份、文号、人名职务、引文、专名、提法、单位／场景。来源只填三种——用户原话（摘原句）、用户提供的文件（文件名＋位置）、【未提供】。正文每一项都必须能在清单中找到，找不到的改为【 】。参考文件与 examples 中的具体内容一律不得直接使用。
 - **文件命名**：`【YYYY.MM.DD】主题名称+文种_Vn.n`。日期为交付日期，统一 YYYY.MM.DD（四位年两位月两位日）；版本号统一大写 `V主.次`——初稿 V1.0，文字微调 V1.1、V1.2，结构调整或换版 V2.0；定稿保留版本号，可在文种后加"（终版）"；不再使用 V0.x。培训类加前缀"培训材料｜"；有场合名时场合前置（如"〔场合名〕-〔主题〕"）；正式场合封面日期用汉字数字（如"二〇二六年十月"）。
 - **保存位置**（按优先级）：
   1. 用户指定了路径／目录 → 保存在该位置（不存在则创建），不再额外套子目录。
   2. 未指定 → 保存在当前工作目录根目录。
   3. 过程产物与交付物分离：只有最终 docx 留在交付位置；中间产物（大纲、提取内容、内容来源清单草稿）→ `产物/artifacts/`；临时文件／日志／下载 → `产物/tmp/<YYYYMMDD-任务名>/`；生成脚本 → `产物/scripts/`；收尾在 `产物/INDEX.md` 登记，只移不删。本次没有过程文件时不强行建目录。
-  4. 交付回复：给出成品绝对路径、字数、未决占位符数量、内容来源清单。不使用 "outputs" 目录或任何文件"present"操作。
+  4. 交付回复：给出成品绝对路径、字数与页数、未决占位符数量、内容来源清单；页数优先按导出 PDF 实测，未实测时注明为估算。起草/生成即排版附“排版回执”（排版依据、执行方式、已应用、未应用、字体回退、校验结果）；纯排版按排版模式回执。不使用 "outputs" 目录或任何文件"present"操作。
 
-## 第五步：交稿自检（A 共用硬伤 → B 路径专属 → C 共用交付）
+## 第五步：交稿自检（A 共用硬伤 → B 路径专属 → C 共用交付 → D 排版）
 
-A 级逐项核对，任一项不过即返工。**起草走 A+B1+C；改稿走 A+B2+C**，两条路径共用一套清单，不再维护第二套。
+内容路径按 A 级逐项核对，任一项不过即返工。**起草走 A+B1+C+D；改稿仅内容走 A+B2+C；改稿后排版走 A+B2+C+D；纯排版走 D+C**。两条内容路径共用一套清单，D 只在涉及排版时执行。
 
 ### A 共用硬伤（两条路径都过，一票否决）
 
@@ -196,11 +247,21 @@ A 级逐项核对，任一项不过即返工。**起草走 A+B1+C；改稿走 A+
 
 ### C 共用交付（两条路径都过）
 
-- **C1 版本与命名**：起草按 `【YYYY.MM.DD】主题+文种_Vn.n`；改稿按原名 + `-YYYYMMDD-vN`，原文件有版本则递增，无版本从 v1 起。
-- **C2 备份与归档**：改前备份到同目录 `历史版本/`；交付后旧稿（含基线稿）归档，当前目录只留最新稿；只归档本次目标文档，不动同目录其它文件。
-- **C3 保存与回复**：保存位置符合第四步优先级；只有成品在交付位置，过程文件已归入 `产物/`；回复含绝对路径、字数、占位符数量；起草附内容来源清单，改稿附基线与变更对照（B2-1、B2-7）。
+- **C1 版本与命名**：起草按 `【YYYY.MM.DD】主题+文种_Vn.n`；改稿按原名 + `-YYYYMMDD-vN`，原文件有版本则递增，无版本从 v1 起；排版任务命名见 D7。
+- **C2 备份与归档**：改前备份到同目录 `历史版本/`；交付后旧稿（含基线稿）归档，当前目录只留最新稿；只归档本次目标文档，不动同目录其它文件；排版任务归档见 D7。
+- **C3 保存与回复**：保存位置符合第四步优先级；只有成品在交付位置，过程文件已归入 `产物/`；回复含绝对路径、字数与页数、占位符数量；起草附内容来源清单，改稿附基线与变更对照（B2-1、B2-7）；排版任务回执见 D1。
 
-**可机器核对的项**：A5、B1-1、C1 交付前用检索核对——搜 `TODO|待补充|待确认`、查编号跳号、核对文件名与正文年月。
+### D 排版（纯排版 / 生成即排版 / 改稿后排版）
+
+- **D1 依据与回执**：排版依据明确（国网预设／原稿体例／用户模板）；开工前已告知；交付回执含依据、执行方式、已应用、未应用、字体回退、校验结果六项。
+- **D2 页面**：A4；国网预设边距 3.7/3.5/2.8/2.6cm；页眉 1.5cm、页脚 2.5cm；22 行×28 字目标已目检，分页无孤行、无异常空白页。
+- **D3 标题**：标题字体、字号、字重、居中、段后间距符合依据；一至四级标题字体、字号、字重、顶格、编号链正确，无跳级；标题文字未被改写。
+- **D4 正文**：字体、字号、行距、首行缩进、对齐符合依据；国网预设为仿宋_GB2312 16pt、固定 28pt、首行 2 字符、两端对齐；字体回退已记录。
+- **D5 页码、表格、图、目录、附件、页眉落款**：页码格式/字体/位置正确；表名位置与字体、表头重复、三线表、限宽、合并单元格正确；图名位置/字体、图片居中/限宽/比例正确；目录域可更新；附件格式正确；页眉/落款未擅自添加，如需添加格式正确。
+- **D6 内容零改动**：正文、表格、图片、脚注、批注、修订与排版前一致；只允许已声明的清理（行首装饰符、空白归一）；表格/图片/附件数量与排版前一致；差异为零或已逐条报告。
+- **D7 命名与归档**：纯排版为 `原名-排版-〔依据〕-YYYYMMDD.docx`；预设重排为 `原名-排版-国网预设-YYYYMMDD.docx`；原稿移入 `历史版本/`；两个排版版本都保留时用依据区分，不互相覆盖。
+
+**可机器核对的项**：A5、B1-1、C1、D2–D7 交付前用检索/读取核对——搜 `TODO|待补充|待确认`、查编号跳号、核对文件名与正文年月、核对页面/字体/页码/表图数量。
 
 ---
 

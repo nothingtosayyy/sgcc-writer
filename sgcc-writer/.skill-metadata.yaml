@@ -88,3 +88,18 @@ examples:
       en: |-
         Revise {{section/scope}} of "{{document}}" per the attached review comments at {{path}}.
         Requirements: change only what the comments point to, keep existing comments and formatting, and provide a before/after change log.
+
+  - id: format-word-document
+    title:
+      zh: 排版 Word 文档
+      en: Format a Word Document
+    description:
+      zh: 对现有 WORD 文档按国网预设排版，不改内容；改稿后排版无目标时沿用原稿体例，用户模板优先，交付附排版回执（含执行方式）
+      en: Format an existing Word document with the SGCC preset without changing content; keep the original style after revision unless a template is supplied, with a formatting receipt
+    prompt:
+      zh: |-
+        把这份文档排一下版，文件在：{{路径}}。没有指定格式就按默认来。
+        要求：不改内容；排完告诉我用了什么排版方式、应用了哪些格式。
+      en: |-
+        Format the document at {{path}}. Use the default if no target format is specified.
+        Requirements: do not change content; report which formatting basis and settings were applied.
