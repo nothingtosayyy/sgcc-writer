@@ -1,5 +1,14 @@
 # sgcc-writer 更新日志
 
+## 0.10.2（2026-11-11）
+
+SKILL.md 瘦身与自检拆分。
+
+- SKILL.md 从 13,552 字压到 5,677 字，只保留路由、硬规则、交付和自检入口。
+- 新增 `reference-check.md`，承载 A/B/C/D 完整自检；`reference-format.md` 的 D 清单改为指针。
+- 各文体参考文件的自检指针统一指向 `reference-check.md`。
+- 帽段规则移入 `reference-style.md`；压缩 frontmatter 描述。
+
 ## 0.10.1（2026-11-11）
 
 软规则调优（三批）。
