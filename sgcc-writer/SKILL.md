@@ -61,7 +61,7 @@ user-invocable: true
 
 工具按能力类别选择，不绑定名称：本地 Word 文档处理能力（含 Word/WPS 自动化）→ Python + `python-docx` 兜底 → 仅规范/模板。无法自动排版时明确告知，不谎称完成。
 
-开工前按 [reference-runtime.md](reference-runtime.md) 预检；优先套用 `assets/templates/guowang-preset-v1.0.0.docx`，模板不可用再按参数排版。异常按异常卡处理，不覆盖原文件。
+开工前按 [reference-runtime.md](reference-runtime.md) 预检；优先套用 `assets/templates/guowang-preset-v1.0.1.docx`，模板不可用再按参数排版。异常按异常卡处理，不覆盖原文件。
 
 交付附排版回执六项：依据、执行方式、已应用、未应用、字体回退、校验结果；另附预检结论、异常/降级。细则、回执模板与 D1–D8 见 [reference-format.md](reference-format.md) 和 [reference-check.md](reference-check.md)。
 
@@ -150,5 +150,5 @@ user-invocable: true
 - 方案 → [reference-plan.md](reference-plan.md)；汇报/总结 → [reference-report.md](reference-report.md)
 - 规范 → [reference-standard.md](reference-standard.md)；调研 → [reference-research.md](reference-research.md)
 - 改稿 → [reference-revision.md](reference-revision.md)；排版 → [reference-format.md](reference-format.md)；自检 → [reference-check.md](reference-check.md)
-- 预检、模板、异常 → [reference-runtime.md](reference-runtime.md)；模板文件 → `assets/templates/guowang-preset-v1.0.0.docx`
+- 预检、模板、异常 → [reference-runtime.md](reference-runtime.md)；模板文件 → `assets/templates/guowang-preset-v1.0.1.docx`
 - 语感样例 → `examples/语感示例.md`（默认不读）

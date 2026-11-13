@@ -9,6 +9,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 import sys
 import zipfile
@@ -16,12 +17,27 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-REQUIRED_FONTS = {
-    "方正小标宋_GBK": ["fzxbs", "方正小标宋"],
-    "仿宋_GB2312": ["simfang"],
-    "楷体_GB2312": ["simkai"],
-    "黑体": ["simhei"],
-    "宋体": ["simsun"],
+FONT_CHAINS = {
+    "方正小标宋_GBK": {
+        "exact": ["方正小标宋_GBK", "FZXBSK"],
+        "fallback": [{"name": "宋体", "aliases": ["宋体", "SimSun", "SIMSUN"]}],
+    },
+    "仿宋_GB2312": {
+        "exact": ["仿宋_GB2312", "FangSong_GB2312", "SIMFANG_GB2312"],
+        "fallback": [{"name": "仿宋", "aliases": ["仿宋", "FangSong", "SIMFANG"]}],
+    },
+    "楷体_GB2312": {
+        "exact": ["楷体_GB2312", "KaiTi_GB2312", "SIMKAI_GB2312"],
+        "fallback": [{"name": "楷体", "aliases": ["楷体", "KaiTi", "SIMKAI"]}],
+    },
+    "黑体": {
+        "exact": ["黑体", "SimHei", "SIMHEI"],
+        "fallback": [],
+    },
+    "宋体": {
+        "exact": ["宋体", "SimSun", "SIMSUN"],
+        "fallback": [],
+    },
 }
 REQUIRED_STYLES = [
     "GW-Title", "GW-H1", "GW-H2", "GW-H3", "GW-H4", "GW-Body",
@@ -38,20 +54,100 @@ def sha256(path):
     return h.hexdigest()
 
 
-def check_fonts():
-    windir = os.environ.get("WINDIR", r"C:\Windows")
-    font_dir = Path(windir) / "Fonts"
-    result = {"font_dir": str(font_dir), "available": {}, "missing": []}
+def _normalize_font_name(value):
+    name = value.strip().lower()
+    name = re.sub(r"\s*\((?:truetype|opentype|type 1|type1)\)\s*$", "", name)
+    return re.sub(r"[\s_\-]+", "", name)
+
+
+def _registry_font_names():
     try:
-        names = [p.name.lower() for p in font_dir.iterdir() if p.is_file()]
-    except Exception:
-        names = []
-    for font, keys in REQUIRED_FONTS.items():
-        hit = any(any(k.lower() in n for k in keys) for n in names)
-        result["available"][font] = hit
-        if not hit:
-            result["missing"].append(font)
-    return result
+        import winreg
+    except ImportError:
+        return [], []
+    names, sources = [], []
+    entries = [
+        (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts", "HKLM registry"),
+        (winreg.HKEY_CURRENT_USER, r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts", "HKCU registry"),
+    ]
+    for hive, key_path, label in entries:
+        try:
+            key = winreg.OpenKey(hive, key_path)
+            count = winreg.QueryInfoKey(key)[1]
+            for i in range(count):
+                value_name, value_data, _ = winreg.EnumValue(key, i)
+                if value_name:
+                    names.append(value_name)
+                if isinstance(value_data, str) and value_data:
+                    names.append(Path(value_data).stem)
+            winreg.CloseKey(key)
+            sources.append(label)
+        except OSError:
+            continue
+    return names, sources
+
+
+def _font_dirs():
+    dirs = [Path(os.environ.get("WINDIR", r"C:\Windows")) / "Fonts"]
+    local = os.environ.get("LOCALAPPDATA")
+    if local:
+        dirs.append(Path(local) / "Microsoft" / "Windows" / "Fonts")
+    programdata = os.environ.get("PROGRAMDATA")
+    if programdata:
+        dirs.append(Path(programdata) / "Kingsoft" / "office6" / "muifont")
+    return dirs
+
+
+def collect_font_catalog():
+    names, sources = _registry_font_names()
+    for font_dir in _font_dirs():
+        if not font_dir.exists():
+            continue
+        found = 0
+        try:
+            for path in font_dir.rglob("*"):
+                if path.is_file() and path.suffix.lower() in (".ttf", ".ttc", ".otf"):
+                    names.extend([path.name, path.stem])
+                    found += 1
+        except OSError:
+            continue
+        if found:
+            sources.append(str(font_dir))
+    normalized = {_normalize_font_name(n) for n in names if n}
+    return {"normalized": normalized, "sources": sources, "entries": len(names)}
+
+
+def classify_fonts(catalog):
+    targets, fallbacks, missing = {}, [], []
+    for target, chain in FONT_CHAINS.items():
+        exact = next((c for c in chain["exact"] if _normalize_font_name(c) in catalog["normalized"]), None)
+        if exact:
+            targets[target] = {"status": "exact", "actual": target}
+            continue
+        fallback = next(
+            (item for item in chain["fallback"]
+             if any(_normalize_font_name(alias) in catalog["normalized"] for alias in item["aliases"])),
+            None,
+        )
+        if fallback:
+            targets[target] = {"status": "fallback", "actual": fallback["name"]}
+            fallbacks.append("%s→%s" % (target, fallback["name"]))
+        else:
+            targets[target] = {"status": "missing", "actual": None}
+            missing.append(target)
+    return targets, fallbacks, missing
+
+
+def check_fonts():
+    catalog = collect_font_catalog()
+    targets, fallbacks, missing = classify_fonts(catalog)
+    return {
+        "sources": catalog["sources"],
+        "installed_entries": catalog["entries"],
+        "targets": targets,
+        "fallbacks": fallbacks,
+        "missing": missing,
+    }
 
 
 def check_template(path):
@@ -106,7 +202,7 @@ def main():
 
     src = Path(args.input).expanduser().resolve()
     template = Path(args.template).expanduser().resolve() if args.template else (
-        Path(__file__).resolve().parent.parent / "assets" / "templates" / "guowang-preset-v1.0.0.docx"
+        Path(__file__).resolve().parent.parent / "assets" / "templates" / "guowang-preset-v1.0.1.docx"
     )
     out_dir = Path(args.output_dir).expanduser().resolve() if args.output_dir else src.parent
 
@@ -160,8 +256,10 @@ def main():
         notes.append("未检测到命令行 Word/WPS/LibreOffice；若宿主提供 Word 能力可忽略")
 
     fonts = check_fonts()
+    if fonts["fallbacks"]:
+        notes.append("字体回退：%s；按实际字体排版并写入回执" % "、".join(fonts["fallbacks"]))
     if fonts["missing"]:
-        warnings.append("E02 字体缺失：%s；将按字体名请求并可能回退" % "、".join(fonts["missing"]))
+        warnings.append("E02 字体缺失且无回退：%s；将按字体名请求，由 Word 替换" % "、".join(fonts["missing"]))
 
     tmpl = check_template(template)
     if not tmpl["exists"]:
@@ -199,10 +297,15 @@ def main():
             c = structure["complex"]
             print("复杂结构：文本框 %s，图形 %s，图片对象 %s，嵌入对象 %s，合并单元格 %s" % (
                 c["text_boxes"], c["drawings"], c["pictures"], c["objects"], c["merged_cells"]))
+        exact = [name for name, info in fonts["targets"].items() if info["status"] == "exact"]
+        parts = []
+        if exact:
+            parts.append("精确 " + "、".join(exact))
+        if fonts["fallbacks"]:
+            parts.append("回退 " + "、".join(fonts["fallbacks"]))
         if fonts["missing"]:
-            print("字体缺失：%s" % "、".join(fonts["missing"]))
-        else:
-            print("字体：目标字体齐全")
+            parts.append("缺失 " + "、".join(fonts["missing"]))
+        print("字体：%s" % ("；".join(parts) if parts else "未检测"))
         print("模板：%s" % ("可用" if tmpl["exists"] and not tmpl.get("styles_missing") else "不可用或样式不全"))
         for w in warnings:
             print("提示：" + w)
