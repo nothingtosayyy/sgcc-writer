@@ -61,7 +61,9 @@ user-invocable: true
 
 工具按能力类别选择，不绑定名称：本地 Word 文档处理能力（含 Word/WPS 自动化）→ Python + `python-docx` 兜底 → 仅规范/模板。无法自动排版时明确告知，不谎称完成。
 
-交付附排版回执六项：依据、执行方式、已应用、未应用、字体回退、校验结果。细则、回执模板与 D1–D7 见 [reference-format.md](reference-format.md) 和 [reference-check.md](reference-check.md)。
+开工前按 [reference-runtime.md](reference-runtime.md) 预检；优先套用 `assets/templates/guowang-preset-v1.0.0.docx`，模板不可用再按参数排版。异常按异常卡处理，不覆盖原文件。
+
+交付附排版回执六项：依据、执行方式、已应用、未应用、字体回退、校验结果；另附预检结论、异常/降级。细则、回执模板与 D1–D8 见 [reference-format.md](reference-format.md) 和 [reference-check.md](reference-check.md)。
 
 ## 内容与规则分界
 
@@ -123,6 +125,7 @@ user-invocable: true
 
 ## 第四步：成稿交付
 
+- **预检**：开工前按 [reference-runtime.md](reference-runtime.md) 检查工具、字体、输入、模板和输出；绿色直接做，黄色先告知限制，红色停止且不写文件。
 - **生成**：仅 WORD 类，直接生成 .docx；正文默认按 [reference-format.md](reference-format.md) 的国网预设排版。用户说“先不排版”时只出内容稿。
 - **保存**：用户指定路径优先，否则存当前工作目录根目录；中间产物进 `产物/artifacts/`，临时文件进 `产物/tmp/`，脚本进 `产物/scripts/`；收尾登记 `产物/INDEX.md`，只移不删。
 - **内容来源清单**：三列 `类别 | 内容 | 来源`，类别覆盖数字、年份、文号、人名职务、引文、专名、提法、单位／场景；来源只填“用户原话／用户文件／【未提供】”；正文每项可溯源，找不到改【 】；不搬用参考文件或 examples 的具体内容。
@@ -147,4 +150,5 @@ user-invocable: true
 - 方案 → [reference-plan.md](reference-plan.md)；汇报/总结 → [reference-report.md](reference-report.md)
 - 规范 → [reference-standard.md](reference-standard.md)；调研 → [reference-research.md](reference-research.md)
 - 改稿 → [reference-revision.md](reference-revision.md)；排版 → [reference-format.md](reference-format.md)；自检 → [reference-check.md](reference-check.md)
+- 预检、模板、异常 → [reference-runtime.md](reference-runtime.md)；模板文件 → `assets/templates/guowang-preset-v1.0.0.docx`
 - 语感样例 → `examples/语感示例.md`（默认不读）

@@ -1,5 +1,14 @@
 # sgcc-writer 更新日志
 
+## 0.10.3（2026-11-13）
+
+运行时可靠性增强。
+
+- 新增 `assets/templates/guowang-preset-v1.0.0.docx`：GW-* 样式、页码域、带【示例】标记的样式示例页。
+- 新增 `scripts/preflight.py`：工具、字体、输入、模板、输出预检，返回绿/黄/红。
+- 新增 `reference-runtime.md`：预检、模板用法、E01–E08 异常卡。
+- 排版回执增加预检结论、异常/降级；新增 D8 模板示例残留。
+
 ## 0.10.2（2026-11-11）
 
 SKILL.md 瘦身与自检拆分。

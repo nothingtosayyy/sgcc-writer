@@ -2,7 +2,7 @@
 
 **国网公文材料写作助手**
 
-![version](https://img.shields.io/badge/version-0.10.2-blue)
+![version](https://img.shields.io/badge/version-0.10.3-blue)
 ![format](https://img.shields.io/badge/output-docx-2b579a)
 ![scope](https://img.shields.io/badge/scope-Word%20only-555)
 
@@ -99,7 +99,7 @@ SGCC Writer 把这些问题拆成可执行的规则：**先判型，再补料，
 
 ### 9. 排版与回执
 
-支持对任意 Word 文档按国网预设排版。改稿后排版无目标时沿用原稿体例，用户提供模板时按模板，模板缺项用国网预设补齐。原生处理 `.docx`；`.doc`/`.docm` 先转换为 `.docx` 再排版，交付默认 `.docx`。本地没有 Word 处理能力时，用 Python + `python-docx` 兜底；仍不可用则只交付格式规范/模板并说明“未自动排版”。排版不改内容，交付时附排版回执（依据、执行方式、已应用、未应用、字体回退、校验结果），并提示可改用国网预设重排。
+支持对任意 Word 文档按国网预设排版。改稿后排版无目标时沿用原稿体例，用户提供模板时按模板，模板缺项用国网预设补齐。原生处理 `.docx`；`.doc`/`.docm` 先转换为 `.docx` 再排版，交付默认 `.docx`。本地没有 Word 处理能力时，用 Python + `python-docx` 兜底；仍不可用则只交付格式规范/模板并说明“未自动排版”。提供国网预设样式模板；开工前做工具/字体/输入/模板预检（绿/黄/红），异常按 E01–E08 固定异常卡处理。排版不改内容，交付时附排版回执（依据、预检、执行方式、已应用、未应用、字体回退、异常/降级、校验结果），并提示可改用国网预设重排。
 
 ---
 
